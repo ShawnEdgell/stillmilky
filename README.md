@@ -8,6 +8,8 @@ StillMilky is a personal hub designed to showcase YouTube content, provide infor
 - **Firebase**: Used for hosting, Firestore for data storage, and Firebase Analytics for tracking user interactions.
 - **Axios**: Employed for making HTTP requests, particularly to interact with external APIs like the YouTube Data API.
 - **YouTube API**: Integrated to fetch and display the latest videos from the creator's YouTube channel.
+- **Tailwind CSS**: Used for utility-first CSS styling to rapidly build custom designs.
+- **Chakra UI**: A simple, modular and accessible component library that gives you the building blocks you need to build your React applications.
 
 ## Key Features
 
@@ -15,3 +17,4 @@ StillMilky is a personal hub designed to showcase YouTube content, provide infor
 - **Game Stats and Settings Downloads**: Provides users with downloadable stats and settings for various video games such as Skater XL and Session.
 - **Firestore Integration**: Stores and retrieves data for various site functionalities.
 - **Firebase Hosting and Analytics**: Hosts the website and tracks user interactions for better insights.
+- **Responsive Design**: Ensures that the website is fully responsive and looks great on all devices.
