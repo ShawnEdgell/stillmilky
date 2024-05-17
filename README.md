@@ -1,8 +1,17 @@
-# React + Vite
+# StillMilky
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+StillMilky is a personal hub designed to showcase YouTube content, provide information about the creator, and offer users the ability to download and view stats and settings for different video games such as Skater XL and Session. The site features automatic display of YouTube videos using the YouTube API.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React + Vite**: Utilized for a fast and efficient development environment with hot module replacement (HMR) and some ESLint rules.
+- **Firebase**: Used for hosting, Firestore for data storage, and Firebase Analytics for tracking user interactions.
+- **Axios**: Employed for making HTTP requests, particularly to interact with external APIs like the YouTube Data API.
+- **YouTube API**: Integrated to fetch and display the latest videos from the creator's YouTube channel.
+
+## Key Features
+
+- **Automatic YouTube Video Display**: Fetches and displays the latest videos from the YouTube channel.
+- **Game Stats and Settings Downloads**: Provides users with downloadable stats and settings for various video games such as Skater XL and Session.
+- **Firestore Integration**: Stores and retrieves data for various site functionalities.
+- **Firebase Hosting and Analytics**: Hosts the website and tracks user interactions for better insights.
