@@ -1,22 +1,21 @@
-// src/components/SocialsMenu.tsx
 import React from 'react';
-import { Menu, MenuButton, MenuList, MenuItem, Button, Image } from '@chakra-ui/react';
+import { Box, Menu, MenuButton, MenuList, MenuItem, Button, Image } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
+import TwitchLogo from '../assets/Twitch.svg';
 import DiscordLogo from '../assets/Discord.svg';
 import YouTubeLogo from '../assets/YouTube.svg';
-import TwitchLogo from '../assets/Twitch.svg';
 import InstagramLogo from '../assets/Instagram.svg';
 import TikTokLogo from '../assets/TikTok.svg';
 
-const SocialsMenu: React.FC = () => (
+const SocialMenu: React.FC = () => (
   <Menu>
     <MenuButton
       as={Button}
       rightIcon={<ChevronDownIcon />}
       colorScheme="blue"
-      px={{ base: 2, md: 4 }}  // Smaller padding on the x-axis for small screens
-      py={{ base: 1, md: 2 }}  // Smaller padding on the y-axis for small screens
-      fontSize={{ base: 'sm', md: 'md' }}  // Smaller font size on small screens
+      px={{ base: 2, md: 4 }}
+      py={{ base: 1, md: 2 }}
+      fontSize={{ base: 'sm', md: 'md' }}
     >
       Socials
     </MenuButton>
@@ -45,4 +44,4 @@ const SocialsMenu: React.FC = () => (
   </Menu>
 );
 
-export default SocialsMenu;
+export default SocialMenu;
