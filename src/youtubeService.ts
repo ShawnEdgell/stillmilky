@@ -23,17 +23,17 @@ const getUploadsPlaylistId = async () => {
 export const getLatestYouTubeVideo = async () => {
   try {
     const uploadsPlaylistId = await getUploadsPlaylistId();
-
     const response = await axios.get('https://www.googleapis.com/youtube/v3/playlistItems', {
       params: {
         part: 'snippet,contentDetails',
         playlistId: uploadsPlaylistId,
-        maxResults: 1, // Fetch only the latest video
+        maxResults: 1,
         key: API_KEY,
       },
     });
 
     const latestVideo = response.data.items[0];
+    console.log('Latest video fetched:', latestVideo);
     return {
       id: latestVideo.contentDetails.videoId,
       snippet: latestVideo.snippet,

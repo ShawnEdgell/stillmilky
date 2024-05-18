@@ -1,7 +1,6 @@
-// src/components/NavButton.tsx
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { Button } from '@chakra-ui/react';
+import { NavLink as RouterNavLink } from 'react-router-dom';
 
 interface NavButtonProps {
   to: string;
@@ -10,7 +9,7 @@ interface NavButtonProps {
 
 const NavButton: React.FC<NavButtonProps> = ({ to, children }) => (
   <Button
-    as={NavLink}
+    as={RouterNavLink}
     to={to}
     variant="ghost"
     _activeLink={{ bg: 'blue.800', color: 'white' }}
