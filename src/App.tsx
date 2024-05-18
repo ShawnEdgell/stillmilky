@@ -1,10 +1,11 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes, NavLink } from 'react-router-dom';
-import { Box, Container, VStack, HStack, Image, Text } from '@chakra-ui/react';
+import { Box, Container, VStack, HStack, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import { HelmetProvider } from 'react-helmet-async';
 import MilkyLogo from './assets/Milky.webp';
 import NavButton from './components/NavButton';
 import SocialMenu from './components/SocialMenu';
+import ColorModeSwitcher from './components/ColorModeSwitcher';
 
 const Home = lazy(() => import('./pages/Home'));
 const StatsAndSettings = lazy(() => import('./pages/Stats'));
@@ -13,8 +14,15 @@ const Links = lazy(() => import('./pages/Links'));
 
 const App: React.FC = () => (
   <HelmetProvider>
-    <Box bg="gray.100" minH="100vh" display="flex" flexDirection="column">
-      <Box bg="blue.600" w="full" p={4} color="white" shadow="md" position="relative">
+    <Box bg={useColorModeValue('gray.100', 'gray.900')} minH="100vh" display="flex" flexDirection="column">
+      <Box
+        bg={useColorModeValue('blue.600', 'gray.800')}
+        w="full"
+        p={4}
+        color={useColorModeValue('white', 'gray.100')}
+        shadow="md"
+        position="relative"
+      >
         <Container maxW="container.md">
           <VStack spacing={2} align="center">
             <NavLink to="/">
@@ -31,6 +39,9 @@ const App: React.FC = () => (
         <Box position="absolute" top={4} right={4}>
           <SocialMenu />
         </Box>
+        <Box position="absolute" top={4} left={4}>
+          <ColorModeSwitcher />
+        </Box>
       </Box>
       <Container maxW="container.md" py={10} flex="1">
         <Suspense fallback={<Text>Loading...</Text>}>
@@ -42,7 +53,14 @@ const App: React.FC = () => (
           </Routes>
         </Suspense>
       </Container>
-      <Box as="footer" py={4} bg="blue.600" color="white" textAlign="center" mt="auto">
+      <Box
+        as="footer"
+        py={4}
+        bg={useColorModeValue('blue.600', 'gray.800')}
+        color={useColorModeValue('white', 'gray.100')}
+        textAlign="center"
+        mt="auto"
+      >
         <Text>&copy; {new Date().getFullYear()} StillMilky. All rights reserved.</Text>
       </Box>
     </Box>
