@@ -16,7 +16,7 @@ const App: React.FC = () => (
     <Box bg="gray.100" minH="100vh" display="flex" flexDirection="column">
       <Box bg="blue.600" w="full" p={4} color="white" shadow="md" position="relative">
         <Container maxW="container.md">
-          <VStack spacing={4} align="center">
+          <VStack spacing={2} align="center">
             <NavLink to="/">
               <Image src={MilkyLogo} alt="StillMilky Logo" boxSize="100px" objectFit="contain" />
             </NavLink>
