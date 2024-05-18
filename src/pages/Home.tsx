@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Heading, Text } from '@chakra-ui/react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { getLatestYouTubeVideo } from '../youtubeService';
 
 const Home: React.FC = () => {
@@ -20,15 +21,16 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <Box p={4}>
-      <Heading as="h1" size="xl" mb={4}>Latest YouTube Upload</Heading>
-      {error && <Text color="red.500">{error}</Text>}
-      {latestVideo && (
-        <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} boxShadow="md" bg="white">
-          <Box position="relative" paddingBottom="56.25%" height="0" overflow="hidden">
+    <HelmetProvider>
+      <Box p={4}>
+        <Helmet>
+          <title>StillMilky | Home</title>
+        </Helmet>
+        <Heading as="h1" size="xl" mb={4}>Latest YouTube Upload</Heading>
+        {error && <Text color="red.500">{error}</Text>}
+        {latestVideo && (
+          <Box position="relative" paddingBottom="56.25%" height="0" overflow="hidden" borderRadius="lg">
             <iframe
-              width="560"
-              height="315"
               src={`https://www.youtube.com/embed/${latestVideo.id}`}
               title={latestVideo.snippet.title}
               frameBorder="0"
@@ -41,12 +43,13 @@ const Home: React.FC = () => {
                 left: 0,
                 width: '100%',
                 height: '100%',
+                borderRadius: '12px',
               }}
             ></iframe>
           </Box>
-        </Box>
-      )}
-    </Box>
+        )}
+      </Box>
+    </HelmetProvider>
   );
 };
 

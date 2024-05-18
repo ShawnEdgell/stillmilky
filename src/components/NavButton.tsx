@@ -15,8 +15,8 @@ const NavButton: React.FC<NavButtonProps> = ({ to, children }) => (
     _activeLink={{ bg: 'blue.800', color: 'white' }}
     _hover={{ bg: 'blue.700' }}
     colorScheme="white"
-    px={4}
-    py={2}
+    px={{ base: 2, md: 4 }} // Smaller padding on small screens
+    fontSize={{ base: 'sm', md: 'md' }} // Smaller font size on small screens
   >
     {children}
   </Button>
