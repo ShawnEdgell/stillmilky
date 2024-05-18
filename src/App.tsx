@@ -1,11 +1,12 @@
+// src/App.tsx
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes, NavLink } from 'react-router-dom';
 import { Box, Container, VStack, HStack, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import { HelmetProvider } from 'react-helmet-async';
 import MilkyLogo from './assets/Milky.webp';
 import NavButton from './components/NavButton';
-import SocialMenu from './components/SocialMenu';
 import ColorModeSwitcher from './components/ColorModeSwitcher';
+import FooterSocials from './components/FooterSocials';
 
 const Home = lazy(() => import('./pages/Home'));
 const StatsAndSettings = lazy(() => import('./pages/Stats'));
@@ -36,9 +37,6 @@ const App: React.FC = () => (
             </HStack>
           </VStack>
         </Container>
-        <Box position="absolute" top={4} right={4}>
-          <SocialMenu />
-        </Box>
         <Box position="absolute" top={4} left={4}>
           <ColorModeSwitcher />
         </Box>
@@ -56,12 +54,11 @@ const App: React.FC = () => (
       <Box
         as="footer"
         py={4}
-        bg={useColorModeValue('blue.600', 'gray.800')}
         color={useColorModeValue('white', 'gray.100')}
         textAlign="center"
         mt="auto"
       >
-        <Text>&copy; {new Date().getFullYear()} StillMilky. All rights reserved.</Text>
+        <FooterSocials />
       </Box>
     </Box>
   </HelmetProvider>
