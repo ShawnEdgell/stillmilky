@@ -9,18 +9,20 @@ import TikTokLogo from '../assets/TikTok.svg';
 
 const SocialMenu: React.FC = () => {
   const menuTextColor = useColorModeValue('black', 'white');
+  const hoverBg = useColorModeValue('blue.700', 'gray.600');
 
   return (
     <Menu>
       <MenuButton
         as={Button}
         rightIcon={<ChevronDownIcon />}
-        colorScheme="blue"
+        variant="ghost"
+        color="currentColor"
         px={{ base: 2, md: 4 }}
         py={{ base: 1, md: 2 }}
         fontSize={{ base: 'sm', md: 'md' }}
-        _hover={{ bg: 'blue.700' }}
-        _active={{ bg: 'blue.700' }}
+        _hover={{ bg: hoverBg }}
+        _active={{ bg: hoverBg }}
         _focus={{ boxShadow: 'none' }}
       >
         Socials
